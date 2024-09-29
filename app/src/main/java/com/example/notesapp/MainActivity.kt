@@ -16,32 +16,19 @@ import com.example.notesapp.ui.theme.NotesAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+       // enableEdgeToEdge()
         setContent {
             NotesAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+sealed class Screen(){
+    @Serializable
+    object NoteScreen
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    NotesAppTheme {
-        Greeting("Android")
-    }
+    @Serializable
+    object AddNoteScreen
 }
