@@ -71,7 +71,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
 
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    
     //room database
     val room_version = "2.6.1"
 
@@ -82,4 +85,5 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.navigation:navigation-compose:2.8.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+    implementation("androidx.compose.material:material-icons-externded-android:1.6.7")
 }
