@@ -1,5 +1,6 @@
 package com.example.notesapp.ui_layer
 
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,6 +15,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Delete
+import androidx.compose.material.icons.rounded.MoreVert
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,17 +30,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.notesapp.Screen
+//import com.example.notesapp.Screen
 
 
 
 @Composable
 fun NoteScreen(
-    modifier: Modifier,
     navController: NavHostController,
     state: NoteState,
-    onEvent: (NoteEvent)->Unit
-    ){
+    onEvent: (NoteEvent) -> Unit
+){
     Scaffold(topBar = {
         Row ( modifier = Modifier
             .fillMaxWidth()
@@ -50,11 +52,11 @@ fun NoteScreen(
                     .weight(1f),
                 fontSize = 19.sp)
             IconButton(onClick = { onEvent(NoteEvent.SortNotes)}) {
-                Icon(imageVector = Icons.AutoMirrored.Rounded.Sort, contentDescription = null)
+                Icon(imageVector = Icons.Rounded.MoreVert, contentDescription = null)
             }
         }
     }, floatingActionButton = {
-        FloatingActionButton(onClick = { navController.navigate(Screen.AddNoteScreen)}) {
+        FloatingActionButton(onClick = { navController.navigate("add_note_screen")}) {
             Icon(imageVector = Icons.Rounded.Add, contentDescription = null)
         }
     }
